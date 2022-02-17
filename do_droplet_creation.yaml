@@ -3,13 +3,13 @@
   gather_facts: no
   vars:
     do_keys:
-      - name: admin@example.com
+      - name: gangaram.d@optit.co
         pub_key_file: "~/.ssh/id_rsa.pub"
     do_droplets:
-      - name: example.com
+      - name: ansibletest
         port: 4222
         user: admin
-        ssh_key_name: admin@example.com
+        ssh_key_name: gangaram.d@optit.co
     do_inventory_file: ~/.ansible/hosts
 
   roles:
