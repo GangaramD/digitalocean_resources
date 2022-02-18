@@ -7,13 +7,15 @@ python2.7 with pip
   sudo pip install 'dopy>=0.3.5,<=0.3.5' 
 
 
-# export DO_API_TOKEN=<Token>
-	
+# Export DO_API_TOKEN 
+   export DO_API_TOOKEN=<Token>
+
 # Create Droplet API ref
 https://docs.digitalocean.com/reference/api/api-reference/#operation/create_droplet
 
 # Size_id
 https://docs.digitalocean.com/reference/api/api-reference/#operation/list_all_sizes 
+
 example:
 `"sizes": [
     "s-1vcpu-1gb",
@@ -33,7 +35,8 @@ example:
 
 # region_id
 https://docs.digitalocean.com/reference/api/api-reference/#operation/list_all_regions 
-   example: 
+
+example: 
    `"regions": [
     "ams2",
     "ams3",
