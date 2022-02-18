@@ -19,8 +19,7 @@ Python:
 
 do_community_module:
    `ansible-galaxy collection install community.digitalocean`
-   
-    https://docs.ansible.com/ansible/latest/collections/community/digitalocean/index.html#plugin-index
+   https://docs.ansible.com/ansible/latest/collections/community/digitalocean/index.html#plugin-index
 
 # Export DO_API_TOKEN 
    `export DO_API_TOOKEN=1111TokenValue22222`
