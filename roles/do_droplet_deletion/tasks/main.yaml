@@ -10,7 +10,7 @@
 #     - "{{ do_keys }}"
 
 - name: "Delete droplets"
-  digital_ocean:
+  community.digitalocean.digital_ocean:
     image_id: "{{ item.image_id | d('ubuntu-20-04-x64') }}"
     name: "{{ item.name }}"
     #api_token: "{{ item.do_token }}"

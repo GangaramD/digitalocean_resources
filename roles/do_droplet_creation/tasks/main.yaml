@@ -1,6 +1,6 @@
 ---
 - name: "Add SSH key"
-  digital_ocean:
+  community.digitalocean.digital_ocean:
     state: present
     command: ssh
     name: "{{ item.name }}"
@@ -10,7 +10,7 @@
     - "{{ do_keys }}"
 
 - name: "Create droplets"
-  digital_ocean:
+  community.digitalocean.digital_ocean:
     backups_enabled: "{{ item.backups_enabled | d('no') }}"
     command: droplet
     image_id: "{{ item.image_id | d('ubuntu-20-04-x64') }}"

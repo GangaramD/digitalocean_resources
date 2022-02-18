@@ -61,13 +61,15 @@ example:
 `ansible-playbook -i inventory/dev/invn.yaml do_droplet_creation.yaml -v`
 
 # Specific tag
-`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags create-storage -v`
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags create-storage -vv`
 
-`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags attach-storage -v`
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags resize-storage -vv`
 
-`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags detach-storage -v`
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags attach-storage -vv`
 
-`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags delete-storage -v`
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags detach-storage -vv`
+
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags delete-storage -vv`
 
 # Community Digital Ocean
 
