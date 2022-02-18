@@ -7,6 +7,8 @@ python2.7 with pip
   sudo pip install 'dopy>=0.3.5,<=0.3.5' 
 
 
+# export DO_API_TOKEN=<Token>
+	
 # Create Droplet API ref
 https://docs.digitalocean.com/reference/api/api-reference/#operation/create_droplet
 
