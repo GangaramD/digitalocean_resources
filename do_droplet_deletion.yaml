@@ -1,0 +1,30 @@
+- name: Provision DigitalOcean droplets
+  hosts: local
+  gather_facts: yes
+  #vars_files:
+  #  - "{{ inventory_dir }}/secrets.yml" 
+  #  - "{{ inventory_dir }}/variable.yml"  
+  vars:
+    do_keys:
+      - name: gangaram.d@optit.co
+        pub_key_file: "~/.ssh/id_rsa.pub"
+        #do_token: your_API_token
+    do_droplets:
+      - name: ansible-1
+        user: admin
+        region_id: 'fra1'
+        size_id: 's-1vcpu-1gb'
+        image_id: 'ubuntu-20-04-x64'
+        port: 443
+        ssh_key_name: gangaram.d@optit.co
+      - name: ansible-2
+        user: admin
+        region_id: 'fra1'
+        size_id: 's-1vcpu-1gb'
+        image_id: 'ubuntu-20-04-x64'
+        port: 80  
+        ssh_key_name: gangaram.d@optit.co  
+    do_inventory_file: inventory/dev/invn.yaml
+
+  roles:
+    - do_droplet_deletion

@@ -1,0 +1,27 @@
+---
+# - name: "Add SSH key"
+#   digital_ocean:
+#     state: present
+#     command: ssh
+#     name: "{{ item.name }}"
+#     ssh_pub_key: "{{ lookup('file', item.pub_key_file) }}"
+#   register: ssh_keys
+#   with_items:
+#     - "{{ do_keys }}"
+
+- name: "Delete droplets"
+  digital_ocean:
+    image_id: "{{ item.image_id | d('ubuntu-20-04-x64') }}"
+    name: "{{ item.name }}"
+    #api_token: "{{ item.do_token }}"
+    private_networking: "{{ item.private_networking | d('no') }}"
+    ipv6: "{{ item.ipv6 | d('no') }}"
+    region_id: "{{ item.region_id | d('fra1') }}"
+    size_id: "{{ item.size_id | d('512mb') }}"
+    state: absent
+    unique_name: yes
+    virtio: "{{ item.virtio | d('yes') }}"
+    wait: "{{ item.wait | d('yes') }}"
+    wait_timeout: "{{ item.wait_timeout | d(600) }}"
+  with_items: "{{ do_droplets }}"
+  register: result_droplets
