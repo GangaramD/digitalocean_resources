@@ -82,7 +82,7 @@ example:
 
 `ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags delete-storage -vv`
 
-# Community Digital Ocean Module references
+# Community Digital Ocean Module references 
 
 https://docs.ansible.com/ansible/latest/collections/community/digitalocean/index.html#plugin-index
 
