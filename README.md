@@ -59,3 +59,18 @@ example:
 
 # Run ansible
 `ansible-playbook -i inventory/dev/invn.yaml do_droplet_creation.yaml -v`
+
+# Specific tag
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags create-storage -v`
+
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags attach-storage -v`
+
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags detach-storage -v`
+
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags delete-storage -v`
+
+# Community Digital Ocean
+
+https://docs.ansible.com/ansible/latest/collections/community/digitalocean/index.html#plugin-index
+
+`ansible-galaxy collection install community.digitalocean`

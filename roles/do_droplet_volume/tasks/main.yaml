@@ -1,0 +1,77 @@
+---
+# Create new Block Storage
+- name: "Create new Block Storage"
+  digital_ocean_block_storage:
+    state: present
+    command: create
+    description: "Block storage"
+    #api_token: <TOKEN>
+    region: "{{ item.region }}"
+    block_size: "{{ item.block_size | d('10') }}"
+    volume_name: "{{ item.name }}"
+  with_items: "{{ do_droplets }}"    
+  tags:
+    - create-storage  
+
+# Delete Block Storage
+- name: "Delete Block Storage"
+  digital_ocean_block_storage:
+    state: absent
+    command: create
+    #api_token: <TOKEN>
+    region: "{{ item.region }}"
+    volume_name: "{{ item.name }}"
+  with_items: "{{ do_droplets }}"    
+  tags:
+    - delete-storage    
+
+- name: Gather information about a specific droplet by name
+  community.digitalocean.digital_ocean_droplet_info:
+    #oauth_token: "{{ oauth_token }}"
+    name: "{{ item.droplet_name }}"
+  with_items: "{{ do_droplets }}"
+  register: result_droplets_info     
+  tags:
+    - attach-storage 
+
+- name: "Extract droplet information"
+  set_fact: do_droplet_id="{{ result_droplets_info | json_query(droplet_query) }}"
+  vars:
+    #droplet_query: "results[*].{ droplet_id: data[*].id}"
+    droplet_query: "results[*].data[*].id"    
+  changed_when: yes
+  tags:
+    - attach-storage   
+
+# # Print the Droplet_id
+# - debug:
+#     msg: "{{item.droplet_id}}"
+#   loop: "{{do_droplet_id}}"       
+
+# Attach Block Storage to a Droplet
+- name: "Attach Block Storage to a Droplet"
+  digital_ocean_block_storage:
+    state: present
+    command: attach
+    #api_token: <TOKEN>
+    volume_name: "{{ item.name }}"
+    region: "{{ item.region }}"
+    droplet_id: '{{do_droplet_id[0][0]}}'
+  with_items: 
+    - "{{ do_droplets }}"     
+  tags:
+    - attach-storage    
+
+# Detach Block Storage from a Droplet
+- name: "Detach Block Storage from a Droplet"
+  digital_ocean_block_storage:
+    state: absent
+    command: attach
+    #api_token: <TOKEN>
+    volume_name: "{{ item.name }}"
+    region: "{{ item.region }}"
+    droplet_id: '{{do_droplet_id[0][0]}}'
+  with_items: 
+    - "{{ do_droplets }}"    
+  tags:
+    - detach-storage    

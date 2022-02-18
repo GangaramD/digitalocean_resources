@@ -1,0 +1,11 @@
+- name: Create a Block Storage DigitalOcean
+  hosts: local
+  gather_facts: yes  
+  vars:
+    do_droplets:
+      - name: ansible-1-block
+        region: 'fra1'
+        block_size: '50'
+        droplet_name: ansible-2
+  roles:
+    - do_droplet_volume   
