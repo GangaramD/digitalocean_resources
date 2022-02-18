@@ -1,6 +1,10 @@
 [local]
 localhost ansible_connection=local
 
+[digitalocean]
+ansible-2 ansible_host=10.114.0.3 ansible_user=admin ansible_port=80
+ansible-1 ansible_host=10.114.0.2 ansible_user=admin ansible_port=443
+
 [all:vars]
 ansible_python_interpreter=/usr/bin/python
 ansible_host_key_checking=False
