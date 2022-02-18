@@ -2,14 +2,22 @@
 ansible to create resource on digital ocean
 
 # Requirement
-ansible: 2.7
+ansible:
+    `version: 2.7`
 
-python2.7 with pip on it
-  sudo pip install 'dopy>=0.3.5,<=0.3.5' 
+Python:
+ `version: python2.7` 
+ Pip:
+   `version:>= 20.3.4`
+   ```pip -V
+    pip 20.3.4 from /home/$user/.local/lib/python2.7/site-packages/pip (python 2.7)```
+ 
+ dopy: 
+  `version: dopy>=0.3.5,<=0.3.5`
+      `sudo pip install 'dopy>=0.3.5,<=0.3.5'` 
 
-pip -V
-  `pip 20.3.4 from /home/$user/.local/lib/python2.7/site-packages/pip (python 2.7)`
-  
+do_community_module:
+`ansible-galaxy collection install community.digitalocean`
 
 # Export DO_API_TOKEN 
    `export DO_API_TOOKEN=1111TokenValue22222`
