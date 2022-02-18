@@ -7,8 +7,8 @@ ansible: 2.7
 python2.7 with pip on it
   sudo pip install 'dopy>=0.3.5,<=0.3.5' 
 
-`pip -V`
-  ```pip 20.3.4 from /home/$user/.local/lib/python2.7/site-packages/pip (python 2.7)```
+pip -V
+  `pip 20.3.4 from /home/$user/.local/lib/python2.7/site-packages/pip (python 2.7)`
   
 
 # Export DO_API_TOKEN 
