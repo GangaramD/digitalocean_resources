@@ -12,7 +12,7 @@ pip -V
   
 
 # Export DO_API_TOKEN 
-   export DO_API_TOOKEN=<Token>
+   `export DO_API_TOOKEN=1111TokenValue22222`
 
 # Create Droplet API ref
 https://docs.digitalocean.com/reference/api/api-reference/#operation/create_droplet
