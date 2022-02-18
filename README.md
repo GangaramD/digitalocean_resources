@@ -19,6 +19,8 @@ Python:
 
 do_community_module:
    `ansible-galaxy collection install community.digitalocean`
+   
+    https://docs.ansible.com/ansible/latest/collections/community/digitalocean/index.html#plugin-index
 
 # Export DO_API_TOKEN 
    `export DO_API_TOOKEN=1111TokenValue22222`
@@ -81,8 +83,7 @@ example:
 
 `ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags delete-storage -vv`
 
-# Community Digital Ocean
+# Community Digital Ocean Module reference
 
 https://docs.ansible.com/ansible/latest/collections/community/digitalocean/index.html#plugin-index
 
-`ansible-galaxy collection install community.digitalocean`
