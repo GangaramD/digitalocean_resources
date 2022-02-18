@@ -1,4 +1,4 @@
-- name: Provision DigitalOcean droplets
+- name: Delete DigitalOcean droplets
   hosts: local
   gather_facts: yes
   #vars_files:
