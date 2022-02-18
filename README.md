@@ -3,6 +3,7 @@ ansible to create resource on digital ocean
 
 # Requirement
 ansible: 2.7
+
 python2.7 with pip on it
   sudo pip install 'dopy>=0.3.5,<=0.3.5' 
 
