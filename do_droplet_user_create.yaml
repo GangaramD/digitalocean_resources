@@ -1,0 +1,14 @@
+---
+- hosts: remote_host
+  become: yes
+  roles:
+    - do_droplet_user_create
+  tags:
+    - add-user
+
+- hosts: remote_host
+  become: yes
+  tasks:
+    - user: name="{{ user }}" state=absent remove=yes
+  tags:
+    - delete-user

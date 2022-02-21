@@ -1,0 +1,6 @@
+- hosts: remote_host
+  become: yes
+  gather_facts: false
+  ignore_unreachable: true
+  roles:
+    - do_droplet_nodeexporter
