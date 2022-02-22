@@ -1,4 +1,4 @@
-- hosts: remote_host
+- hosts: "digitalocean"
   become: yes
   gather_facts: false
   ignore_unreachable: true
