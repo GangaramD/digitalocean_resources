@@ -11,14 +11,14 @@
   roles:
     - do_droplet_volume   
 
-- name: Create a Block Storage DigitalOcean for volume 2
-  hosts: local
-  gather_facts: yes  
-  vars:
-    do_droplets:
-      - name: ansible-2-block
-        region: 'fra1'
-        block_size: '50'
-        droplet_name: ansible-2        
-  roles:
-    - do_droplet_volume 
+# - name: Create a Block Storage DigitalOcean for volume 2
+#   hosts: local
+#   gather_facts: yes  
+#   vars:
+#     do_droplets:
+#       - name: ansible-2-block
+#         region: 'fra1'
+#         block_size: '50'
+#         droplet_name: ansible-2        
+#   roles:
+#     - do_droplet_volume 

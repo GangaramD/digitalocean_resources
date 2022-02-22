@@ -90,4 +90,5 @@
   with_items: 
     - "{{ do_droplets }}"    
   tags:
-    - detach-storage    
+    - detach-storage
+    

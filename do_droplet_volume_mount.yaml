@@ -1,0 +1,8 @@
+---
+- name: Mount the available Block Storage to DigitalOcean Droplet
+  hosts: "digitalocean"
+  gather_facts: yes
+  vars:
+    mount_path: "/data"         
+  roles:
+    - do_droplet_volume_mount   
