@@ -42,7 +42,7 @@
 
 - name: Mount volume read-write
   mount:
-    path: /mnt/data
+    path: "{{ mount_path }}"
     src: /dev/disk/by-id/{{ volume_name }}-part1
     fstype: ext4
     opts: defaults,discard

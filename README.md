@@ -79,6 +79,8 @@ example:
 
 `ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags attach-storage -vv`
 
+`ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume_mount.yaml --tags mount-storage -vv`
+
 `ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags detach-storage -vv`
 
 `ansible-playbook -i inventory/dev/invn.yaml do_droplet_volume.yaml --tags delete-storage -vv`
