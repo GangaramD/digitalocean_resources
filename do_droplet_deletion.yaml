@@ -15,14 +15,14 @@
         region_id: 'fra1'
         size_id: 's-1vcpu-1gb'
         image_id: 'ubuntu-20-04-x64'
-        port: 443
+        port: 22
         ssh_key_name: gangaram.d@optit.co
       # - name: ansible-2
       #   user: admin
       #   region_id: 'fra1'
       #   size_id: 's-1vcpu-1gb'
       #   image_id: 'ubuntu-20-04-x64'
-      #   port: 80  
+      #   port: 22 
       #   ssh_key_name: gangaram.d@optit.co  
     do_inventory_file: inventory/dev/invn.yaml
 
