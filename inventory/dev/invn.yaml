@@ -2,8 +2,7 @@
 localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python
 
 [digitalocean]
-#ansible-2 ansible_host=68.183.65.132 ansible_user=admin ansible_port=80
-ansible-1 ansible_host=10.114.0.2 ansible_user=root ansible_port=22
+ansible-1 ansible_host=64.227.113.248 ansible_user=root ansible_port=22
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
